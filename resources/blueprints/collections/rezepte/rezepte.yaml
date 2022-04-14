@@ -1,0 +1,111 @@
+title: Rezept
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Titel
+          instructions_position: above
+          listable: hidden
+          read_only: false
+          input_type: text
+          antlers: false
+      -
+        handle: properties
+        field:
+          display: Eigenschaften
+          type: taggable
+          icon: tags
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: description
+        field:
+          antlers: false
+          display: Beschreibung
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: images
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          display: Bilder
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: cooking_time
+        field:
+          fields:
+            -
+              import: duration
+          mode: table
+          max_rows: 1
+          min_rows: 1
+          reorderable: true
+          display: Kochzeit
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: ingredients
+        field:
+          fields:
+            -
+              import: ingredient
+          mode: table
+          reorderable: true
+          display: Zutaten
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: preparation
+        field:
+          fields:
+            -
+              handle: zubreitungsschritt
+              field:
+                antlers: false
+                display: Zubreitungsschritt
+                type: textarea
+                icon: textarea
+                listable: hidden
+                instructions_position: above
+                read_only: false
+          mode: table
+          reorderable: true
+          display: Zubereitung
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true

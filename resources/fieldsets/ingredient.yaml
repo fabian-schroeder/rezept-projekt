@@ -1,0 +1,48 @@
+title: Zutat
+fields:
+  -
+    handle: amount
+    field:
+      display: Menge
+      type: float
+      icon: float
+      listable: hidden
+      instructions_position: above
+      read_only: false
+  -
+    handle: unit
+    field:
+      options:
+        KG: Kilogramm
+        GR: Gramm
+        EL: Esslöffel
+        TL: Teelöffel
+        Prise: Prise
+        Stck: Stück
+        ML: Mililiter
+        L: Liter
+        PK: Päckchen
+        MSP: Messerspitze
+      multiple: false
+      clearable: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      display: Einheit
+      type: select
+      icon: select
+      listable: hidden
+      instructions_position: above
+      read_only: false
+  -
+    handle: ingredient
+    field:
+      input_type: text
+      antlers: false
+      display: Zutat
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      read_only: false

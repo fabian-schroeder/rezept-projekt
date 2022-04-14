@@ -1,0 +1,29 @@
+title: Kochzeit
+fields:
+  -
+    handle: duration
+    field:
+      display: Dauer
+      type: integer
+      icon: integer
+      listable: hidden
+      instructions_position: above
+      read_only: false
+  -
+    handle: select_field
+    field:
+      options:
+        Minutes: Minuten
+        Hours: Stunden
+      multiple: false
+      clearable: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      display: 'Select Field'
+      type: select
+      icon: select
+      listable: hidden
+      instructions_position: above
+      read_only: false
