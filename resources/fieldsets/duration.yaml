@@ -1,11 +1,11 @@
-title: Kochzeit
+title: Zeit
 fields:
   -
     handle: duration
     field:
       display: Dauer
-      type: integer
-      icon: integer
+      type: float
+      icon: float
       listable: hidden
       instructions_position: above
       read_only: false
@@ -14,7 +14,7 @@ fields:
     field:
       options:
         Minutes: Minuten
-        Hours: Stunden
+        Stunden: Stunden
       multiple: false
       clearable: false
       searchable: true
@@ -27,3 +27,5 @@ fields:
       listable: hidden
       instructions_position: above
       read_only: false
+      validate:
+        - required

@@ -17,9 +17,35 @@ sections:
           input_type: text
           antlers: false
       -
-        handle: properties
+        handle: category
         field:
-          display: Eigenschaften
+          mode: default
+          create: true
+          taxonomies:
+            - rezepteigenschaften
+          display: Kategorie
+          type: terms
+          icon: taxonomy
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: recipeCuisine
+        field:
+          mode: default
+          create: true
+          display: Küche
+          type: terms
+          icon: taxonomy
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          taxonomies:
+            - recipeCuisine
+      -
+        handle: keywords
+        field:
+          display: Schlüsselwörter
           type: taggable
           icon: tags
           listable: hidden
@@ -28,24 +54,15 @@ sections:
       -
         handle: description
         field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
           antlers: false
           display: Beschreibung
-          type: textarea
-          icon: textarea
-          listable: hidden
-          instructions_position: above
-          read_only: false
-      -
-        handle: images
-        field:
-          mode: list
-          container: assets
-          restrict: false
-          allow_uploads: true
-          show_filename: true
-          display: Bilder
-          type: assets
-          icon: assets
+          type: markdown
+          icon: markdown
           listable: hidden
           instructions_position: above
           read_only: false
@@ -66,6 +83,68 @@ sections:
           instructions_position: above
           read_only: false
       -
+        handle: preperation_time
+        field:
+          fields:
+            -
+              import: duration
+          mode: table
+          max_rows: 1
+          min_rows: 1
+          reorderable: true
+          display: Vorbereitungszeit
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: total_time
+        field:
+          fields:
+            -
+              import: duration
+          mode: table
+          max_rows: 1
+          min_rows: 1
+          reorderable: true
+          display: Gesamtzeit
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: images
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          display: Bilder
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: nutrition
+        field:
+          fields:
+            -
+              import: nutrition
+          mode: table
+          reorderable: true
+          display: Nährwerte
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          max_rows: 1
+          min_rows: 1
+      -
         handle: ingredients
         field:
           fields:
@@ -80,24 +159,92 @@ sections:
           instructions_position: above
           read_only: false
       -
-        handle: preparation
+        handle: preperation
         field:
           fields:
             -
-              handle: zubreitungsschritt
+              handle: name
               field:
+                input_type: text
                 antlers: false
-                display: Zubreitungsschritt
-                type: textarea
-                icon: textarea
+                display: Name
+                type: text
+                icon: text
                 listable: hidden
                 instructions_position: above
                 read_only: false
+            -
+              handle: description
+              field:
+                restrict: false
+                automatic_line_breaks: true
+                automatic_links: false
+                escape_markup: false
+                smartypants: false
+                antlers: false
+                display: Beschreibung
+                type: markdown
+                icon: markdown
+                listable: hidden
+                instructions_position: above
+                read_only: false
+            -
+              handle: url
+              field:
+                input_type: text
+                antlers: false
+                display: url
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+                read_only: false
+            -
+              handle: image
+              field:
+                mode: list
+                container: assets
+                restrict: false
+                allow_uploads: true
+                show_filename: true
+                display: Bilder
+                type: assets
+                icon: assets
+                listable: hidden
+                instructions_position: above
+                read_only: false
+                width: 25
           mode: table
           reorderable: true
           display: Zubereitung
           type: grid
           icon: grid
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: autor
+        field:
+          mode: select
+          display: Autor
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: date_published
+        field:
+          mode: single
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: Veröffentlichungsdatum
+          type: date
+          icon: date
           listable: hidden
           instructions_position: above
           read_only: false

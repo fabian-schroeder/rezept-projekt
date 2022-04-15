@@ -1,0 +1,29 @@
+title: Nährwerte
+fields:
+  -
+    handle: serving_size
+    field:
+      display: Serviergröße
+      type: integer
+      icon: integer
+      listable: hidden
+      instructions_position: above
+      read_only: false
+  -
+    handle: calories
+    field:
+      display: Kalorien
+      type: integer
+      icon: integer
+      listable: hidden
+      instructions_position: above
+      read_only: false
+  -
+    handle: fat_content
+    field:
+      display: Fett
+      type: integer
+      icon: integer
+      listable: hidden
+      instructions_position: above
+      read_only: false

@@ -2,3 +2,8 @@ name: 'Fabian Schröder'
 super: true
 id: 59d74329-860a-4ee5-8b56-55aa18d9c500
 password_hash: $2y$10$Z03/REngWJQMJgLm2act9uUPYxvfFNOd6eg.DE0IFJgIccOnT91me
+preferences:
+  collections:
+    rezepte:
+      columns:
+        - title
